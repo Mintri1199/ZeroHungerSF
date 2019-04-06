@@ -27,6 +27,9 @@
 		44D5A7B722594A9D000611F9 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A7B622594A9D000611F9 /* LoginButton.swift */; };
 		44D5A7B922594E32000611F9 /* HelperExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A7B822594E32000611F9 /* HelperExtension.swift */; };
 		44D5A7BB225950FE000611F9 /* SignUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A7BA225950FE000611F9 /* SignUpButton.swift */; };
+		44D5A7BE2259541A000611F9 /* SignupViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A7BD2259541A000611F9 /* SignupViews.swift */; };
+		44D5A7C0225954FE000611F9 /* NameStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A7BF225954FE000611F9 /* NameStack.swift */; };
+		44D5A7C2225957E8000611F9 /* TypeOfUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A7C1225957E8000611F9 /* TypeOfUserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,9 @@
 		44D5A7B622594A9D000611F9 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		44D5A7B822594E32000611F9 /* HelperExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperExtension.swift; sourceTree = "<group>"; };
 		44D5A7BA225950FE000611F9 /* SignUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButton.swift; sourceTree = "<group>"; };
+		44D5A7BD2259541A000611F9 /* SignupViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViews.swift; sourceTree = "<group>"; };
+		44D5A7BF225954FE000611F9 /* NameStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameStack.swift; sourceTree = "<group>"; };
+		44D5A7C1225957E8000611F9 /* TypeOfUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeOfUserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +156,7 @@
 			children = (
 				44D5A7832259378D000611F9 /* ViewController.swift */,
 				44D5A7AA225940D6000611F9 /* LoginLandingPage.swift */,
+				44D5A7C1225957E8000611F9 /* TypeOfUserViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -164,6 +171,7 @@
 		44D5A7AE225940FD000611F9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				44D5A7BC225953F1000611F9 /* SignupViews */,
 				44D5A7B12259423A000611F9 /* LandingPage */,
 			);
 			path = Views;
@@ -179,6 +187,15 @@
 				44D5A7BA225950FE000611F9 /* SignUpButton.swift */,
 			);
 			path = LandingPage;
+			sourceTree = "<group>";
+		};
+		44D5A7BC225953F1000611F9 /* SignupViews */ = {
+			isa = PBXGroup;
+			children = (
+				44D5A7BD2259541A000611F9 /* SignupViews.swift */,
+				44D5A7BF225954FE000611F9 /* NameStack.swift */,
+			);
+			path = SignupViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +268,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44D5A7C2225957E8000611F9 /* TypeOfUserViewController.swift in Sources */,
+				44D5A7BE2259541A000611F9 /* SignupViews.swift in Sources */,
+				44D5A7C0225954FE000611F9 /* NameStack.swift in Sources */,
 				44D5A7A722593A61000611F9 /* EndPointTypeProtocol.swift in Sources */,
 				44D5A7B722594A9D000611F9 /* LoginButton.swift in Sources */,
 				44D5A7B5225944F5000611F9 /* LoginStackView.swift in Sources */,

@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController = UINavigationController(rootViewController: ViewController())
         
         if let window = window {
-            window.rootViewController = LoginLandingPage()
+            window.rootViewController = TypeOfUserViewController()
             window.makeKeyAndVisible()
         }
         
