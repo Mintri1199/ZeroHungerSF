@@ -35,6 +35,7 @@
 		44D5A7C922595E92000611F9 /* OuterStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A7C822595E92000611F9 /* OuterStackView.swift */; };
 		44D5A7CB22596AEC000611F9 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A7CA22596AEC000611F9 /* BackButton.swift */; };
 		44D5A7CD2259742A000611F9 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A7CC2259742A000611F9 /* HomeScreen.swift */; };
+		44D5A7CF2259AFF1000611F9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A7CE2259AFF1000611F9 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		44D5A7C822595E92000611F9 /* OuterStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuterStackView.swift; sourceTree = "<group>"; };
 		44D5A7CA22596AEC000611F9 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		44D5A7CC2259742A000611F9 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		44D5A7CE2259AFF1000611F9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 		44D5A7AD225940F7000611F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				44D5A7CE2259AFF1000611F9 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				44D5A7C522595D95000611F9 /* VolunteerViewController.swift in Sources */,
 				44D5A79F225939A1000611F9 /* HTTPMethod.swift in Sources */,
 				44D5A7AB225940D6000611F9 /* LoginLandingPage.swift in Sources */,
+				44D5A7CF2259AFF1000611F9 /* UserModel.swift in Sources */,
 				44D5A7A5225939E6000611F9 /* Router.swift in Sources */,
 				44D5A7842259378D000611F9 /* ViewController.swift in Sources */,
 				44D5A7C722595DA3000611F9 /* RestaurantOwnerViewController.swift in Sources */,

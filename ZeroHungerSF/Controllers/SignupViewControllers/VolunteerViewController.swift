@@ -12,8 +12,12 @@ class VolunteerViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupForm()
+//        userSignupForm.outerStack.nameStack.firstNameTextField.delegate = self
+//        userSignupForm.outerStack.nameStack.lastNameTextField.delegate = self
+//        userSignupForm.outerStack.emailTextField.delegate = self
+//        userSignupForm.outerStack.passwordTextField.delegate = self
+//        userSignupForm.outerStack.repeatPasswordTextField.delegate = self
         userSignupForm.signupButton.addTarget(self, action: #selector(pushToHomeScreen), for: .touchUpInside)
     }
     
@@ -30,6 +34,7 @@ class VolunteerViewController: UIViewController, UITextFieldDelegate {
             ])
     }
     
+    // TODO: come back to this once the user model is finished
     @objc private func pushToHomeScreen(){
         guard let firstNameText = userSignupForm.outerStack.nameStack.firstNameTextField.text,
             let lastNameText = userSignupForm.outerStack.nameStack.lastNameTextField.text,
@@ -39,7 +44,13 @@ class VolunteerViewController: UIViewController, UITextFieldDelegate {
             userSignupForm.signupButton.shake()
             return
         }
-        if emailText.isValidEmail() != true{
+        print("firstName: \(firstNameText)")
+        print(emailText)
+        print(passwordText)
+        if firstNameText.isEmpty || lastNameText.isEmpty || emailText.isEmpty || passwordText.isEmpty || repeatedPasswordText.isEmpty {
+            userSignupForm.signupButton.shake()
+            
+        } else if emailText.isValidEmail() != true{
             // Making sure the user inputted valid email
             userSignupForm.outerStack.emailTextField.shake()
             

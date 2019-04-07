@@ -8,13 +8,13 @@
 
 import UIKit
 
-class LoginLandingPage: UIViewController {
+class LoginLandingPage: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red 
         setupViews()
-        views.loginStackView.loginButton.addTarget(self, action: #selector(pushToHomeScreen), for: .touchUpInside)
+        loginViews.loginStackView.loginButton.addTarget(self, action: #selector(pushToHomeScreen), for: .touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -22,7 +22,7 @@ class LoginLandingPage: UIViewController {
         configNavbar()
     }
     
-    var views = LandingPageViews(frame: .zero)
+    var loginViews = LandingPageViews(frame: .zero)
     
     private func configNavbar() {
         self.navigationController?.navigationBar.barTintColor = .red
@@ -31,17 +31,31 @@ class LoginLandingPage: UIViewController {
     }
     
     private func setupViews() {
-        view.addSubview(views)
+        view.addSubview(loginViews)
         
         NSLayoutConstraint.activate([
-            views.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
-            views.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
-            views.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            views.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
+            loginViews.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            loginViews.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+            loginViews.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            loginViews.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
             ])
     }
     
     @objc private func pushToHomeScreen() {
-        navigationController?.pushViewController(HomeScreen(), animated: true)
+        guard let emailText = loginViews.loginStackView.emailTextField.text,
+              let passwordText = loginViews.loginStackView.passwordTextField.text else {
+                return
+        }
+        
+        print("email: \(emailText)")
+        print("password: \(passwordText)")
+        if emailText.isEmpty || passwordText.isEmpty {
+            loginViews.loginStackView.loginButton.shake()
+        } else if emailText.isValidEmail() != true {
+            loginViews.loginStackView.emailTextField.shake()
+        } else {
+            // Insert aunthentication here
+            navigationController?.pushViewController(HomeScreen(), animated: true)
+        }
     }
 }

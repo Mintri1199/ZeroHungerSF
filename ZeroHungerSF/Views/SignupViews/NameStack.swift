@@ -8,12 +8,13 @@
 
 import UIKit
 
-class NameStack: UIStackView {
+class NameStack: UIStackView, UITextFieldDelegate {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         axis = .horizontal
         distribution = .fillEqually
+        translatesAutoresizingMaskIntoConstraints = false
         spacing = 20
         setupTextFields()
     }
@@ -30,6 +31,7 @@ class NameStack: UIStackView {
             NSAttributedString.Key.font : UIFont(name: "Helvetica", size: 20)!
         ]
         textField.keyboardType = .alphabet
+        textField.delegate = self
         textField.attributedPlaceholder = NSAttributedString(string: "First Name", attributes:attributes)
         return textField
     }
@@ -41,6 +43,7 @@ class NameStack: UIStackView {
             NSAttributedString.Key.font : UIFont(name: "Helvetica", size: 20)!
         ]
         textField.keyboardType = .alphabet
+        textField.delegate = self
         textField.attributedPlaceholder = NSAttributedString(string: "Last Name", attributes:attributes)
         return textField
     }

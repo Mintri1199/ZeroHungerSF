@@ -6,5 +6,7 @@ target 'ZeroHungerSF' do
   use_frameworks!
 
   # Pods for ZeroHungerSF
+  pod 'NVActivityIndicatorView'
+
 
 end

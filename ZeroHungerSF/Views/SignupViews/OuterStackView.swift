@@ -30,7 +30,7 @@ class OuterStackView: UIStackView {
     var emailTextField: UserInputTextField = {
         var textField = UserInputTextField(frame: .zero)
         textField.placeholder = "Email address"
-        
+        textField.keyboardType = UIKeyboardType.emailAddress 
         return textField
     }()
     
