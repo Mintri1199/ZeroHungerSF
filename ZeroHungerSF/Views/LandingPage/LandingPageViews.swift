@@ -14,8 +14,8 @@ class LandingPageViews: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
-        setupStackView()
-        setupSignupButton()
+        setupViews()
+        loginStackView.signupButton.addTarget(self, action: #selector(pushToSignupType), for: .touchUpInside)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -23,31 +23,24 @@ class LandingPageViews: UIView {
     }
     
     var loginStackView = LoginStackView(frame: .zero)
-    var signupButton = SignUpButton(frame: .zero)
     
-    fileprivate func setupStackView() {
+    
+    private func setupViews() {
         addSubview(loginStackView)
         
+        
         NSLayoutConstraint.activate([
-            loginStackView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2),
+            loginStackView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3),
             loginStackView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8),
             loginStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            loginStackView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -50)
+            loginStackView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -50),
             ])
+
     }
     
-    fileprivate func setupSignupButton() {
-        addSubview(signupButton)
-        
-        NSLayoutConstraint.activate([
-            signupButton.topAnchor.constraint(equalTo: loginStackView.bottomAnchor, constant: 20),
-            signupButton.leadingAnchor.constraint(equalTo: loginStackView.leadingAnchor, constant: 0),
-            signupButton.trailingAnchor.constraint(equalTo: loginStackView.trailingAnchor, constant: 0),
-        signupButton.heightAnchor.constraint(equalToConstant: bounds.height * 0.2),
-            signupButton.centerXAnchor.constraint(equalTo: centerXAnchor)
-            ])
-        
+    @objc func pushToSignupType() {
+        guard let VC = findViewController() as? LoginLandingPage else { return }
+        VC.navigationController?.pushViewController(TypeOfUserViewController(), animated: true)
+        print("Sign up button tapped")
     }
-    
-    
 }

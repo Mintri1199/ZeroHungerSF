@@ -12,7 +12,6 @@ class LoginButton: UIButton {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setTitle("Login", for: .normal)
         setTitleColor(.white, for: .normal)
         layer.cornerRadius = 10

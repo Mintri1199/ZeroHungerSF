@@ -15,7 +15,10 @@ class TypeOfUserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
+        
         setupStackView()
+        volunteerButton.addTarget(self, action: #selector(pushToVolunteerSignup), for: .touchUpInside)
+        restaurantOwnerButton.addTarget(self, action: #selector(pushToRestaurantOwnerSignup), for: .touchUpInside)
     }
     
     var typeStackView: UIStackView = {
@@ -30,7 +33,7 @@ class TypeOfUserViewController: UIViewController {
     var volunteerButton: LoginButton = {
         var button = LoginButton(frame: .zero)
         button.setTitle("Volunteer", for: .normal)
-        button.backgroundColor = .clear
+        button.backgroundColor = .green
         return button
     }()
     
@@ -38,21 +41,29 @@ class TypeOfUserViewController: UIViewController {
         var button = LoginButton(frame: .zero)
         button.setTitle("Restaurant Owner", for: .normal)
         button.titleLabel?.numberOfLines = 2
-        button.backgroundColor = .clear
+        button.backgroundColor = .gray
         return button
     }()
     
-    private func setupStackView() {
+    fileprivate func setupStackView() {
         view.addSubview(typeStackView)
         typeStackView.addArrangedSubview(volunteerButton)
         typeStackView.addArrangedSubview(restaurantOwnerButton)
         
         NSLayoutConstraint.activate([
-            typeStackView.heightAnchor.constraint(equalToConstant: ((view.bounds.width * 0.6) * 2) + 20),
+            typeStackView.heightAnchor.constraint(equalToConstant: view.bounds.width * 0.6 - 20),
             typeStackView.widthAnchor.constraint(equalToConstant: view.bounds.width * 0.6),
             typeStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             typeStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
             ])
     }
     
+    @objc private  func pushToVolunteerSignup() {
+        navigationController?.pushViewController(VolunteerViewController(), animated: true)
+    }
+    
+    @objc private  func pushToRestaurantOwnerSignup() {
+        navigationController?.pushViewController(RestaurantOwnerViewController(), animated: true)
+    }
+
 }

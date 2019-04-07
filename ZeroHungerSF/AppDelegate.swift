@@ -16,10 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        navigationController = UINavigationController(rootViewController: ViewController())
+        navigationController = UINavigationController(rootViewController: LoginLandingPage())
         
         if let window = window {
-            window.rootViewController = TypeOfUserViewController()
+            window.rootViewController = navigationController
             window.makeKeyAndVisible()
         }
         

@@ -17,7 +17,7 @@ class SignUpButton: UIButton {
         setTitleColor(.white, for: .normal)
         layer.cornerRadius = 10
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = UIColor.clear
+        backgroundColor = UIColor.blue
     }
     
     required init?(coder aDecoder: NSCoder) {

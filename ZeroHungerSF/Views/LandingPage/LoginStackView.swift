@@ -47,20 +47,14 @@ class LoginStackView: UIStackView {
     }
     
     var loginButton = LoginButton()
+    var signupButton = SignUpButton(frame: .zero)
     
     fileprivate func setupTextField() {
         addArrangedSubview(emailTextField)
         addArrangedSubview(passwordTextField)
         addArrangedSubview(loginButton)
+        addArrangedSubview(signupButton)
         
-        NSLayoutConstraint.activate([
-//            emailTextField.heightAnchor.constraint(equalToConstant: bounds.height * 0.3),
-//            passwordTextField.heightAnchor.constraint(equalToConstant: bounds.height * 0.3),
-//            loginButton.heightAnchor.constraint(equalToConstant: bounds.height * 0.3),
-            loginButton.widthAnchor.constraint(equalToConstant: bounds.width * 0.8)
-            
-            ]
-        )
     }
     
     

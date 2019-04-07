@@ -15,6 +15,7 @@ class NameStack: UIStackView {
         axis = .horizontal
         distribution = .fillEqually
         spacing = 20
+        setupTextFields()
     }
     
     required init(coder: NSCoder) {
@@ -28,6 +29,7 @@ class NameStack: UIStackView {
             NSAttributedString.Key.foregroundColor: UIColor.lightGray,
             NSAttributedString.Key.font : UIFont(name: "Helvetica", size: 20)!
         ]
+        textField.keyboardType = .alphabet
         textField.attributedPlaceholder = NSAttributedString(string: "First Name", attributes:attributes)
         return textField
     }
@@ -38,6 +40,7 @@ class NameStack: UIStackView {
             NSAttributedString.Key.foregroundColor: UIColor.lightGray,
             NSAttributedString.Key.font : UIFont(name: "Helvetica", size: 20)!
         ]
+        textField.keyboardType = .alphabet
         textField.attributedPlaceholder = NSAttributedString(string: "Last Name", attributes:attributes)
         return textField
     }
